@@ -1,0 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700;800&family=Poppins:wght@400;500;600;700;800;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color: #1f1f1f;
+  background: #f6efe7;
+  font-family: 'Poppins', sans-serif;
+}
+
+html, body, #root {
+  margin: 0;
+  min-height: 100%;
+  background: #f6efe7;
+}
+
+body {
+  @apply bg-cream text-gray-800;
+  font-family: 'Poppins', sans-serif;
+}
+
+h1, h2, h3, h4 {
+  font-family: 'Cormorant Garamond', serif;
+}
+
+::-webkit-scrollbar { width: 8px; height: 8px; }
+::-webkit-scrollbar-thumb { background: #D4A017; border-radius: 8px; }
+::-webkit-scrollbar-track { background: #FFF8ED; }
+
+.btn-primary {
+  @apply bg-[#5a0d17] text-white font-bold px-6 py-2.5 rounded-md hover:bg-[#7a0d1e] transition-colors tracking-wider;
+}
+.btn-gold {
+  @apply bg-[#f2c759] text-[#5a0d17] font-semibold px-5 py-2.5 rounded-md hover:bg-[#e1b84f] hover:text-[#3d0811] transition-colors;
+}
+.card {
+  @apply bg-white rounded-lg shadow-card border border-[#e1c4a0]/30;
+}
+.section-title {
+  @apply text-2xl md:text-3xl font-bold text-[#7a0d1e] text-center tracking-wider;
+}
