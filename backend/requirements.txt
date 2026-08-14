@@ -8,4 +8,4 @@ passlib[bcrypt]==1.7.4
 python-multipart==0.0.9
 alembic==1.13.2
 python-dotenv==1.0.1
-razorpay==1.4.0
+razorpay==1.4.2
