@@ -1,0 +1,14 @@
+services:
+  - type: web
+    name: kalyani-ghee-sweets-api
+    runtime: python
+    rootDir: backend
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn main:app --host 0.0.0.0 --port $PORT
+    envVars:
+      - key: DATABASE_URL
+        scope: service
+        value: postgresql://...  # Add your database URL
+      - key: SECRET_KEY
+        scope: service
+        value: your-secret-key-here
