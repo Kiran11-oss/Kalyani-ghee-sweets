@@ -47,10 +47,9 @@ export default function CustomerHeader() {
 
   return (
     <header className="w-full">
-      {/* Top Navigation */}
-      <div className="bg-[#7a0d1e] px-5 py-2 md:px-7">
-        <div className="mx-auto flex max-w-[1450px] items-center justify-between text-[#f9e9cd]">
-          <div className="flex items-center gap-4 text-[0.75rem] font-semibold text-[#f5e7d0]">
+      <div className="bg-[#7a0d1e] px-3 py-2 sm:px-5 md:px-7">
+        <div className="mx-auto flex max-w-[1450px] items-center justify-between gap-2 text-[#f9e9cd]">
+          <div className="hidden items-center gap-3 text-[0.68rem] font-semibold text-[#f5e7d0] sm:flex md:text-[0.75rem]">
             <Link to="/" className="flex items-center gap-1.5 hover:text-[#f2c759] transition-colors">
               <FiHome size={14} />
               <span>Home</span>
@@ -58,30 +57,28 @@ export default function CustomerHeader() {
             <span className="text-[#8b4a52]">•</span>
             <Link to="/contact" className="flex items-center gap-1.5 hover:text-[#f2c759] transition-colors">
               <FiMapPin size={14} />
-              <span>Kalyani Ghee Sweets</span>
+              <span className="hidden md:inline">Kalyani Ghee Sweets</span>
             </Link>
           </div>
 
-          <div className="flex items-center gap-4 text-[0.75rem] font-semibold text-[#f5e7d0]">
-            <Link to="/track-order" className="flex items-center gap-1.5 hover:text-[#f2c759] transition-colors">
-              <span>Track Order</span>
-            </Link>
-            <span className="text-[#8b4a52]">•</span>
-            <Link to="/wishlist" className="flex items-center gap-1.5 hover:text-[#f2c759] transition-colors">
+          <div className="flex flex-wrap items-center justify-end gap-2 text-[0.65rem] font-semibold text-[#f5e7d0] sm:gap-3 md:text-[0.75rem]">
+            <Link to="/track-order" className="hover:text-[#f2c759] transition-colors">Track Order</Link>
+            <span className="hidden text-[#8b4a52] sm:inline">•</span>
+            <Link to="/wishlist" className="hidden items-center gap-1.5 hover:text-[#f2c759] transition-colors sm:flex">
               <FiHeart size={14} />
               <span>Wishlist</span>
             </Link>
-            <span className="text-[#8b4a52]">•</span>
+            <span className="hidden text-[#8b4a52] sm:inline">•</span>
             <Link to="/profile" className="flex items-center gap-1.5 hover:text-[#f2c759] transition-colors">
               <FiUser size={14} />
               <span>My Account</span>
             </Link>
-            <span className="text-[#8b4a52]">•</span>
+            <span className="hidden text-[#8b4a52] sm:inline">•</span>
             <a 
               href="https://www.instagram.com/kalyanisweetkalyanisweet?igsh=MWRiZTFvdjdyY2gxYQ==" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="flex items-center gap-1.5 hover:text-[#f2c759] transition-colors"
+              className="hidden items-center gap-1.5 hover:text-[#f2c759] transition-colors sm:flex"
               aria-label="Follow us on Instagram"
             >
               <FaInstagram size={14} />
@@ -91,24 +88,17 @@ export default function CustomerHeader() {
         </div>
       </div>
 
-      {/* Main Header - Logo, Search, Cart */}
-      <div className="bg-white px-5 py-3 md:px-7 md:py-3 border-b-2 border-[#7a0d1e]">
-        <div className="mx-auto flex max-w-[1450px] items-center justify-between gap-4 md:gap-6">
-          {/* Logo */}
-          <Link to="/" className="shrink-0">
+      <div className="bg-white px-3 py-3 sm:px-5 md:px-7 border-b-2 border-[#7a0d1e]">
+        <div className="mx-auto flex max-w-[1450px] flex-col gap-3 sm:flex-row sm:items-center sm:justify-between md:gap-6">
+          <Link to="/" className="mx-auto shrink-0 sm:mx-0">
             <img 
               src={kalyaniLogo} 
               alt="Kalyani Logo" 
-              style={{
-                height: "123px",
-                width: "200px",
-              }}
-              className="object-contain"
+              className="h-16 w-auto object-contain sm:h-[90px] md:h-[123px] md:w-[200px]"
             />
           </Link>
 
-          {/* Search Bar */}
-          <form onSubmit={handleSearch} className="flex-1 max-w-2xl relative">
+          <form onSubmit={handleSearch} className="relative w-full sm:flex-1 sm:max-w-2xl">
             <div className="flex items-center overflow-hidden rounded-lg border-2 border-[#7a0d1e] bg-white">
               <input
                 value={query}
@@ -119,7 +109,7 @@ export default function CustomerHeader() {
                 onFocus={() => setShowDropdown(query.trim().length > 0)}
                 onBlur={handleInputBlur}
                 placeholder="Search for sweets, pickles, snacks..."
-                className="flex-1 border-0 bg-transparent px-3 py-2.5 text-xs md:text-sm text-[#56262c] placeholder:text-[#a08a8d] focus:outline-none font-medium"
+                className="flex-1 border-0 bg-transparent px-3 py-2 text-[0.7rem] text-[#56262c] placeholder:text-[#a08a8d] focus:outline-none font-medium sm:text-xs md:text-sm"
               />
               <button
                 type="submit"
@@ -130,7 +120,6 @@ export default function CustomerHeader() {
               </button>
             </div>
 
-            {/* Dropdown Suggestions */}
             {showDropdown && filteredProducts.length > 0 && (
               <div 
                 className="absolute top-full left-0 right-0 mt-1 bg-white border border-[#7a0d1e] rounded-md shadow-lg z-50 max-h-64 overflow-y-auto"
@@ -155,11 +144,10 @@ export default function CustomerHeader() {
             )}
           </form>
 
-          {/* Cart Button */}
           <button
             type="button"
             onClick={() => navigate('/cart')}
-            className="flex items-center gap-2 rounded-md border-2 border-[#7a0d1e] bg-white px-4 py-2 md:px-5 text-xs md:text-sm text-[#7a0d1e] font-bold whitespace-nowrap transition hover:bg-[#f9e9cd] shrink-0"
+            className="flex items-center justify-center gap-2 rounded-md border-2 border-[#7a0d1e] bg-white px-3 py-2 text-[0.7rem] font-bold whitespace-nowrap text-[#7a0d1e] transition hover:bg-[#f9e9cd] sm:px-4 md:px-5 md:text-sm"
           >
             <FiShoppingCart size={16} />
             <span>Cart {cartCount > 0 && `(${cartCount})`}</span>
@@ -167,20 +155,19 @@ export default function CustomerHeader() {
         </div>
       </div>
 
-      {/* Category Navigation */}
-      <nav className="bg-[#7a0d1e]">
-        <div className="mx-auto flex max-w-[1450px] items-center justify-between px-3 py-2.5 md:px-6 gap-2">
+      <nav className="bg-[#7a0d1e] overflow-x-auto">
+        <div className="mx-auto flex max-w-[1450px] min-w-max items-center justify-between gap-1 px-3 py-2.5 sm:px-6">
           {categories.map((c) => (
             <Link
               key={c.id}
               to={`/category/${c.slug}`}
-              className="whitespace-nowrap px-2.5 py-2 text-[0.7rem] font-bold tracking-wider text-[#f8ead4] transition hover:bg-[#f2c759] hover:text-[#471217] md:px-3 rounded-sm"
+              className="whitespace-nowrap px-2 py-2 text-[0.62rem] font-bold tracking-wider text-[#f8ead4] transition hover:bg-[#f2c759] hover:text-[#471217] sm:text-[0.7rem] md:px-3 rounded-sm"
             >
               {c.name.toUpperCase()}
             </Link>
           ))}
-          <Link to="/about" className="whitespace-nowrap px-2.5 py-2 text-[0.7rem] font-bold tracking-wider text-[#f8ead4] transition hover:bg-[#f2c759] hover:text-[#471217] md:px-3 rounded-sm">ABOUT US</Link>
-          <Link to="/contact" className="whitespace-nowrap px-2.5 py-2 text-[0.7rem] font-bold tracking-wider text-[#f8ead4] transition hover:bg-[#f2c759] hover:text-[#471217] md:px-3 rounded-sm">CONTACT US</Link>
+          <Link to="/about" className="whitespace-nowrap px-2 py-2 text-[0.62rem] font-bold tracking-wider text-[#f8ead4] transition hover:bg-[#f2c759] hover:text-[#471217] sm:text-[0.7rem] md:px-3 rounded-sm">ABOUT US</Link>
+          <Link to="/contact" className="whitespace-nowrap px-2 py-2 text-[0.62rem] font-bold tracking-wider text-[#f8ead4] transition hover:bg-[#f2c759] hover:text-[#471217] sm:text-[0.7rem] md:px-3 rounded-sm">CONTACT US</Link>
         </div>
       </nav>
     </header>

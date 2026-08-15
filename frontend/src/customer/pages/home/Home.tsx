@@ -10,7 +10,7 @@ export default function Home() {
 
   return (
     <div>
-      <section className="relative w-full overflow-hidden h-80 md:h-96">
+      <section className="relative w-full overflow-hidden h-[18rem] sm:h-80 md:h-96">
         {/* Background Image */}
         <img 
           src={catalogImg} 
@@ -18,33 +18,27 @@ export default function Home() {
           className="absolute inset-0 w-full h-full object-cover"
         />
         
-        {/* Overlay - Left side semi-transparent dark overlay for text readability */}
-        <div className="absolute inset-0 bg-gradient-to-r from-black/20 via-black/10 to-transparent"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-black/25 via-black/10 to-transparent"></div>
 
-        {/* Content */}
-        <div className="relative h-full flex items-center px-6 md:px-20">
-          <div className="w-full md:w-1/2">
-            {/* Traditional Recipes Label */}
-            <p className="text-[0.65rem] font-bold uppercase tracking-widest text-[#6b5b4a] md:text-[0.75rem] letter-spacing-wide">
+        <div className="relative h-full flex items-center px-4 sm:px-6 md:px-20">
+          <div className="w-full max-w-[18rem] sm:max-w-xs md:w-1/2 md:max-w-none">
+            <p className="text-[0.6rem] font-bold uppercase tracking-[0.18em] text-[#6b5b4a] sm:text-[0.7rem] md:text-[0.75rem]">
               TRADITIONAL RECIPES
             </p>
             
-            {/* Main Heading - Serif */}
-            <h1 className="mt-2 text-[2rem] font-black leading-tight text-[#7a0d1e] md:text-4xl" style={{ fontFamily: "'Cormorant Garamond', serif", fontWeight: 700, letterSpacing: '0.05em' }}>
+            <h1 className="mt-2 text-[1.8rem] leading-[0.95] font-black text-[#7a0d1e] sm:text-[2.1rem] md:text-4xl" style={{ fontFamily: "'Cormorant Garamond', serif", fontWeight: 700, letterSpacing: '0.05em' }}>
               PURE GHEE
               <br />
               <span className="text-[#5a4a42]">PERFECT LOVE</span>
             </h1>
             
-            {/* Descriptive Copy */}
-            <p className="mt-3 max-w-xs text-[0.65rem] font-semibold leading-relaxed text-[#6b5b4a] md:text-[0.8rem]">
+            <p className="mt-3 max-w-[12rem] text-[0.62rem] font-semibold leading-relaxed text-[#6b5b4a] sm:max-w-xs sm:text-[0.7rem] md:text-[0.8rem]">
               AUTHENTIC TELANGANA<br />SWEETS, PICKLES &amp; SNACKS<br />MADE WITH LOVE
             </p>
             
-            {/* CTA Button */}
             <Link
               to="/shop"
-              className="mt-4 inline-block rounded-sm bg-[#5a0d17] px-6 py-2 text-[0.65rem] font-bold uppercase tracking-widest text-white transition hover:bg-[#3d0811] md:px-7 md:py-2.5 md:text-[0.75rem]"
+              className="mt-4 inline-block rounded-sm bg-[#5a0d17] px-5 py-2 text-[0.62rem] font-bold uppercase tracking-[0.18em] text-white transition hover:bg-[#3d0811] sm:px-6 sm:text-[0.7rem] md:px-7 md:py-2.5 md:text-[0.75rem]"
             >
               SHOP NOW ➢
             </Link>

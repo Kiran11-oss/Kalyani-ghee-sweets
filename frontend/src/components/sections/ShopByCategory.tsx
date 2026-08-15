@@ -21,21 +21,18 @@ export default function ShopByCategory() {
         </div>
 
         {/* Categories Grid */}
-        <div className="grid grid-cols-2 gap-6 md:grid-cols-4 lg:grid-cols-8 md:gap-8 mb-10">
+        <div className="grid grid-cols-2 gap-4 sm:gap-6 md:grid-cols-4 lg:grid-cols-8 md:gap-8 mb-10">
           {categories.map((category) => (
             <Link
               key={category.id}
               to={`/category/${category.slug}`}
               className="group flex flex-col items-center transition-transform duration-300 hover:scale-105"
             >
-              {/* Ornamental Frame - Outer Decorative Ring */}
-              <div className="relative mb-4 w-full max-w-[140px] aspect-square">
-                {/* Decorative Circle Border */}
+              <div className="relative mb-3 sm:mb-4 w-full max-w-[120px] sm:max-w-[140px] aspect-square">
                 <div className="absolute inset-0 rounded-full border-4 border-[#c9a56f] shadow-lg group-hover:shadow-2xl transition-shadow duration-300"
                   style={{
                     boxShadow: '0 0 0 3px rgba(201, 165, 111, 0.3), inset 0 0 0 2px rgba(201, 165, 111, 0.2)'
                   }}>
-                  {/* Inner Content - Circular Image */}
                   <div className="absolute inset-2 rounded-full overflow-hidden bg-white">
                     <img
                       src={category.image}
@@ -46,8 +43,7 @@ export default function ShopByCategory() {
                 </div>
               </div>
 
-              {/* Category Name */}
-              <h3 className="text-center text-xs md:text-sm font-bold text-[#5a0d17] uppercase tracking-widest leading-tight max-w-[120px]">
+              <h3 className="text-center text-[0.62rem] sm:text-xs md:text-sm font-bold text-[#5a0d17] uppercase tracking-[0.12em] leading-tight max-w-[110px] sm:max-w-[120px]">
                 {category.name}
               </h3>
             </Link>
